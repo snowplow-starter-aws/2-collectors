@@ -80,7 +80,7 @@ collector {
     expiration = "365 days"# {{cookieExpiration}} # e.g. "365 days"
     expiration = ${?COLLECTOR_COOKIE_EXPIRATION}
     # Network cookie name
-    name = "sp-cookie"
+    name = "sp"
     name = ${?COLLECTOR_COOKIE_NAME}
     # The domain is optional and will make the cookie accessible to other
     # applications on the domain. Comment out these lines to tie cookies to
@@ -94,7 +94,6 @@ collector {
     # domain.com will match domain.com, www.domain.com and secure.client.domain.com
     # client.domain.com will match secure.client.domain.com but not domain.com or www.domain.com
     domains = [
-        #"petersiemen.net",
         # "snowplow-collector-517427146.eu-central-1.elb.amazonaws.com" # e.g. "domain.com" -> any origin domain ending with this will be matched and domain.com will be returned
         # "{{cookieDomain2}}" # e.g. "secure.anotherdomain.com" -> any origin domain ending with this will be matched and secure.anotherdomain.com will be returned
         # ... more domains
@@ -104,8 +103,8 @@ collector {
     # ... more domains
     # If specified, the fallback domain will be used if none of the Origin header hosts matches the list of
     # cookie domains configured above. (For example, if there is no Origin header.)
-    #fallbackDomain = "petersiemen.net"
-    #fallbackDomain = ${?FALLBACK_DOMAIN}
+    #fallbackDomain = "yourdomain.net"
+    fallbackDomain = ${?FALLBACK_DOMAIN}
     secure = true
     secure = ${?COLLECTOR_COOKIE_SECURE}
     httpOnly = false
