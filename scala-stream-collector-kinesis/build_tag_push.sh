@@ -3,7 +3,7 @@
 
 IMAGE_TAG=1.0.1
 REPO=petersiemen
-NAME=scala-stream-collector-kinesis
+NAME=snowplow-scala-stream-collector-kinesis
 
 docker build -t ${NAME}:${IMAGE_TAG} .
 docker tag ${NAME}:${IMAGE_TAG} ${REPO}/${NAME}:${IMAGE_TAG}
