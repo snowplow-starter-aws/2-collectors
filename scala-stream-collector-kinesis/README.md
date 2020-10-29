@@ -1,6 +1,5 @@
 # 2-collectors
 
-
 params for config.hocon
 
 * cookie.name
