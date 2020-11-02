@@ -17,6 +17,7 @@
 # To use, copy this to 'application.conf' and modify the configuration options.
 
 # 'collector' contains configuration options for the main Scala collector.
+# 'collector' contains configuration options for the main Scala collector.
 collector {
   # The collector runs as a web service specified on the following interface and port.
   interface = "0.0.0.0"
@@ -126,9 +127,9 @@ collector {
   doNotTrackCookie {
     enabled = true
     enabled = ${?COLLECTOR_DO_NOT_TRACK_COOKIE_ENABLED}
-    name = "dnt-sp" # {{doNotTrackCookieName}}
+    name = "wpcc" # {{doNotTrackCookieName}}
     name = ${?COLLECTOR_DO_NOT_TRACK_COOKIE_NAME}
-    value = "true" #{{doNotTrackCookieValue}}
+    value = "false" #{{doNotTrackCookieValue}}
     value = ${?COLLECTOR_DO_NOT_TRACK_COOKIE_VALUE}
   }
 
